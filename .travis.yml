@@ -12,17 +12,17 @@ before_install:
   - export TZ='Asia/Shanghai'
 
 install:
-  - yarn install
+  - npm install
 
 script:
-  - yarn blog:build
-  - echo "yiukuenchu.me" > docs/.vuepress/dist/CNAME # 这里 "chungzh.cn" 改成你自己的域名，如果没有，删掉这行就行了
+  - npm run build
+  - echo "yiukuenchu.me" > src/.vuepress/dist/CNAME # 这里 "chungzh.cn" 改成你自己的域名，如果没有，删掉这行就行了
 
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: docs/.vuepress/dist
+  local_dir: src/.vuepress/dist
   name: $GIT_NAME
   email: $GIT_EMAIL
   keep-history: true

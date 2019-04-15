@@ -7,6 +7,12 @@ module.exports = {
   // 网站描述
   description: '啊，你在看我的首页',
 
+  head: [
+    ['link', {
+      rel: 'icon',
+      href: '/favicon.png'
+    }],
+  ],
   // 网站语言
   locales: {
     '/': {
@@ -45,50 +51,50 @@ module.exports = {
       sns: {
         // Github 帐号和链接
         github: {
-          account: 'meteorlxy',
-          link: 'https://github.com/meteorlxy',
+          account: '@yiukuenchu',
+          link: 'https://github.com/yiukuenchu',
         },
 
         // Facebook 帐号和链接
-        facebook: {
-          account: 'meteorlxy.cn',
-          link: 'https://www.facebook.com/meteorlxy.cn',
-        },
+        // facebook: {
+        //   account: 'meteorlxy.cn',
+        //   link: 'https://www.facebook.com/meteorlxy.cn',
+        // },
 
         // LinkedIn 帐号和链接
-        linkedin: {
-          account: 'meteorlxy',
-          link: 'http://www.linkedin.com/in/meteorlxy',
-        },
+        // linkedin: {
+        //   account: 'meteorlxy',
+        //   link: 'http://www.linkedin.com/in/meteorlxy',
+        // },
 
         // Twitter 帐号和链接
         twitter: {
-          account: 'meteorlxy_cn',
-          link: 'https://twitter.com/meteorlxy_cn',
+          account: '@yiukuenchu',
+          link: 'https://twitter.com/yiukuenchu',
         },
 
         // 新浪微博 帐号和链接
-        weibo: {
-          account: '@焦炭君_Meteor',
-          link: 'https://weibo.com/u/2039655434',
-        },
+        // weibo: {
+        //   account: '@焦炭君_Meteor',
+        //   link: 'https://weibo.com/u/2039655434',
+        // },
 
         // 知乎 帐号和链接
-        zhihu: {
-          account: 'meteorlxy.cn',
-          link: 'https://www.zhihu.com/people/meteorlxy.cn',
-        },
+        // zhihu: {
+        //   account: 'meteorlxy.cn',
+        //   link: 'https://www.zhihu.com/people/meteorlxy.cn',
+        // },
 
-        // 豆瓣 帐号和链接
-        douban: {
-          account: '159342708',
-          link: 'https://www.douban.com/people/159342708',
-        },
+        // // 豆瓣 帐号和链接
+        // douban: {
+        //   account: '159342708',
+        //   link: 'https://www.douban.com/people/159342708',
+        // },
 
         // Instagram 帐号和链接
         instagram: {
-          account: 'meteorlxy.cn',
-          link: 'https://www.instagram.com/meteorlxy.cn',
+          account: '@yiukuenchu',
+          link: 'https://www.instagram.com/yiukuenchu/',
         },
       },
     },
@@ -109,7 +115,7 @@ module.exports = {
     nav: [
       { text: 'Home', link: '/', exact: true },
       { text: 'Posts', link: '/posts/', exact: false },
-      { text: 'Github', link: 'https://github.com/yiukuenchu' },
+      { text: 'GitHub', link: 'https://github.com/yiukuenchu' },
     ],
 
     // 评论配置，参考下方 [页面评论] 章节
