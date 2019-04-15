@@ -21,12 +21,6 @@ module.exports = {
   themeConfig: {
     lang: require('vuepress-theme-meteorlxy/lib/langs/zh-CN'),
 
-    nav: [
-      { text: 'Home', link: '/', exact: true },
-      { text: 'Posts', link: '/posts/', exact: false },
-      { text: 'Github', link: 'https://github.com/yiukuenchu' },
-    ],
-
     // 个人信息（没有或不想设置的，删掉对应字段即可）
     personalInfo: {
       // 昵称
@@ -115,6 +109,7 @@ module.exports = {
     nav: [
       { text: 'Home', link: '/', exact: true },
       { text: 'Posts', link: '/posts/', exact: false },
+      { text: 'Github', link: 'https://github.com/yiukuenchu' },
     ],
 
     // 评论配置，参考下方 [页面评论] 章节
