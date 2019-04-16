@@ -5,7 +5,7 @@ module.exports = {
   title: 'Yiu Kuen Chu',
 
   // 网站描述
-  description: '啊，你在看我的首页',
+  description: '(ฅ´ω`ฅ) 摸鱼啦喂',
 
   head: [
     ['link', {
@@ -25,8 +25,7 @@ module.exports = {
 
   // 主题配置
   themeConfig: {
-    lang: require('vuepress-theme-meteorlxy/lib/langs/zh-CN'),
-
+    
     // 个人信息（没有或不想设置的，删掉对应字段即可）
     personalInfo: {
       // 昵称
@@ -115,15 +114,16 @@ module.exports = {
     nav: [
       { text: 'Home', link: '/', exact: true },
       { text: 'Posts', link: '/posts/', exact: false },
+      { text: 'About', link: '/about/'},
       { text: 'GitHub', link: 'https://github.com/yiukuenchu' },
     ],
 
     // 评论配置，参考下方 [页面评论] 章节
     comments: {
-      owner: 'meteorlxy',
-      repo: 'vuepress-theme-meteorlxy',
-      clientId: 'MY_CLIENT_ID',
-      clientSecret: 'MY_CLIENT_SECRET',
+      owner: 'yiukuenchu',
+      repo: 'yiukuenchu.github.io',
+      clientId: '16a6bff985796e25235d',
+      clientSecret: '7ad0c209994c61aaad141b2da29fe56ac34e90b9',
     },
   },
 }
