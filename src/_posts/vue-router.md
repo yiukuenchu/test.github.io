@@ -21,7 +21,7 @@ BTW，上述项目我部署在了 Heroku 上：[badge-the-cover](https://badgeth
 
 # 什么是 Vue-Router？
 用以下一个简单的实例来说明吧：
-```
+```js
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App'
@@ -56,7 +56,7 @@ const app = new Vue({
 
 # 创建路由匹配对象
 在 `src/create-matcher.js` 中，我们可以看到 matcher 的实现：
-```
+```js
 export type Matcher = {
   match: (raw: RawLocation, current?: Route, redirectedFrom?: Location) => Route;
   addRoutes: (routes: Array<RouteConfig>) => void;
@@ -67,7 +67,7 @@ export type Matcher = {
 
 # 路由跳转
 `history.transitionTo` 是 Vue-Router 中非常重要的方法，当我们切换路由线路的时候，就会执行到该方法。它的定义在 `src/history/base.js` 中：
-```
+```js
 transitionTo (location: RawLocation, onComplete?: Function, onAbort?: Function) {
   const route = this.router.match(location, this.current)
   this.confirmTransition(route, () => {
@@ -94,7 +94,7 @@ transitionTo (location: RawLocation, onComplete?: Function, onAbort?: Function) 
 - 拿到新的路径后，那么接下来就会执行 `confirmTransition` 方法去做真正的切换，由于这个过程可能有一些异步的操作（如异步组件），所以整个 `confirmTransition` API 设计成带有成功回调函数和失败回调函数。
 
 # 导航守卫
-```
+```js
 const queue: Array<?NavigationGuard> = [].concat(
     // 失活的组件钩子
     extractLeaveGuards(deactivated),
@@ -119,7 +119,7 @@ const queue: Array<?NavigationGuard> = [].concat(
 
 5. 解析异步路由组件。
 之后，会执行一个 `runQueue` 的回调函数：
-```
+```js
 runQueue(queue, iterator, () => {
   const postEnterCbs = []
   const isValid = () => this.current === route
@@ -146,7 +146,7 @@ runQueue(queue, iterator, () => {
 8. 导航确认，调用 `afterEach` 导航守卫钩子.
 
 最后确认执行 `onComplete(route)` 后，会执行 `this.updateRoute(route)` 方法：
-```
+```js
 updateRoute (route: Route) {
   const prev = this.current
   this.current = route

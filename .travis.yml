@@ -16,8 +16,7 @@ install:
 
 script:
   - npm run build
-  - echo "yiukuenchu.me" > src/.vuepress/dist/CNAME # 这里 "chungzh.cn" 改成你自己的域名，如果没有，删掉这行就行了
-
+  - echo "yiukuenchu.me" > src/.vuepress/dist/CNAME
 deploy:
   provider: pages
   skip_cleanup: true
