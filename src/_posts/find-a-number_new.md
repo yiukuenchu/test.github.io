@@ -32,7 +32,7 @@ vssue-title: find-a-number
 
 这样带来的后果就是十分慢。要知道，从磁盘加载数据是 **磁盘io操作**，是非常慢的，比内存操作还慢，而且每次加载的数据量还这么大，次数又多，可想而知最终可能需要的时间达到了小时级别。
 
-![iU1mdg.png](https://s1.ax1x.com/2018/10/14/iU1mdg.png)
+![iU1mdg.png](https://raw.githubusercontent.com/yiukuenchu/image-farm/master/img/iU1mdg.png)
     
 
 

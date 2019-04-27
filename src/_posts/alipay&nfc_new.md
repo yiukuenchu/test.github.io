@@ -9,7 +9,7 @@ vssue-title: alipay&nfc
 
 
 
-![](https://ws2.sinaimg.cn/large/006tNc79ly1g1yn61qvd1j31400dcn11.jpg)
+![](https://raw.githubusercontent.com/yiukuenchu/image-farm/master/img/006tNc79ly1g1yn61qvd1j31400dcn11.jpg)
 
 ## 阅读须知
 
@@ -45,7 +45,7 @@ vssue-title: alipay&nfc
 
 离线处理表示进行交易的时候无须联网，一卡通内置的芯片中包含了交易数据和余额信息；NFC 应用程序则将数据存储在手机里的 Secure Element 里面。所有数据变化都会直接读写**本地**的数据，而不会经过服务器。当然，事后这些数据都会与服务器取得联系，以同步交易数据，检验数据是否异常。
 
-![手机 NFC 工作原理](https://ws2.sinaimg.cn/large/006tNc79ly1g1yn6tea2xj308p0d3weo.jpg)
+![手机 NFC 工作原理](https://raw.githubusercontent.com/yiukuenchu/image-farm/master/img/006tNc79ly1g1yn6tea2xj308p0d3weo.jpg)
 
 ## 孰优孰劣
 

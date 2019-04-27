@@ -43,10 +43,10 @@ sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install
 git clone https://github.com/powerline/fonts.git --depth=1; cd fonts; ./install.sh; cd ..; rm -rf fonts
 ```
 安装完后，打开iTerm2的设置，在Profile中找到Text，点击Change Font即可修改字体，我用的字体是 **Meslo LG M Regular for Powerline**。
-![](https://ws3.sinaimg.cn/large/006tKfTcgy1g078c4t58sj31ga0u0wtt.jpg)
+![](https://raw.githubusercontent.com/yiukuenchu/image-farm/master/img/006tKfTcgy1g078c4t58sj31ga0u0wtt.jpg)
   
 接着修改字体颜色，在Profile里找到Color。我推荐使用 **Solarized Dark**。
-![](https://ws3.sinaimg.cn/large/006tKfTcgy1g0784y62jlj31jj0u07jl.jpg)
+![](https://raw.githubusercontent.com/yiukuenchu/image-farm/master/img/006tKfTcgy1g0784y62jlj31jj0u07jl.jpg)
 
 ## 配置主题
 安装了oh-my-zsh后，就可以通过下面的命令查看所有默认主题：
@@ -61,7 +61,7 @@ vim ~/.zshrc
 
 ## gruvbox
 [gruvbox](https://github.com/morhetz/gruvbox)是一款沿用Solarized的配色方案而衍生出来的主题，下面是它的效果：
-![](https://ws3.sinaimg.cn/large/006tKfTcgy1g078qhjwqdj31k30u0aqu.jpg)
+![](https://raw.githubusercontent.com/yiukuenchu/image-farm/master/img/006tKfTcgy1g078qhjwqdj31k30u0aqu.jpg)
 
 感兴趣的小伙伴自行研究研究吧。
  

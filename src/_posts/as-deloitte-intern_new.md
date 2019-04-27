@@ -11,7 +11,7 @@ vssue-title: as-deloitte-intern
 
 > "Make Your Impact With Us."
 
-![](https://ws3.sinaimg.cn/large/006tNbRwgy1fxsdunyytrj31900u0e83.jpg)
+![](https://raw.githubusercontent.com/yiukuenchu/image-farm/master/img/006tNbRwgy1fxsdunyytrj31900u0e83.jpg)
 
 *▲ Photo by Unsplash.com*
 
@@ -21,13 +21,13 @@ vssue-title: as-deloitte-intern
   
 8月初入职当天，我来到了位于深圳罗湖的德勤深圳分公司，公司位于华润大厦13-17楼📌。需要去前台的话，直接去13楼就好啦。
 
-![](https://ws4.sinaimg.cn/large/006tNbRwgy1fxsgukr3ljj30u00u0u0x.jpg)
+![](https://raw.githubusercontent.com/yiukuenchu/image-farm/master/img/006tNbRwgy1fxsgukr3ljj30u00u0u0x.jpg)
   
 *▲ 一出电梯门，就能看到醒目的标识*
 
 接着就是一系列的入职培训和电脑领取💻。原计划项目部署在自己的电脑上，但被告知由于保密问题和安全问题的原因，必须使用公司发的电脑，平时skype、公司内部邮件、填报工时等操作都必须使用这台电脑。发给实习生的是一台Thinkpad X240。也是我第一次接触Thinkpad系列。
 
-![](https://ws3.sinaimg.cn/large/006tNbRwgy1fxshcfsr7wj30u00u0x6p.jpg)
+![](https://raw.githubusercontent.com/yiukuenchu/image-farm/master/img/006tNbRwgy1fxshcfsr7wj30u00u0x6p.jpg)
 *▲ Thinkpad X240*
 
 自此开始了我的德勤生活。
@@ -51,7 +51,7 @@ vssue-title: as-deloitte-intern
 
 德勤的工作环境超级干净，办公室也很可爱。
 
-![](https://ws3.sinaimg.cn/large/006tNbRwgy1fxsir74m40j31410u07wh.jpg)
+![](https://raw.githubusercontent.com/yiukuenchu/image-farm/master/img/006tNbRwgy1fxsir74m40j31410u07wh.jpg)
 
 *▲ 办公室一角*
 
@@ -61,7 +61,7 @@ vssue-title: as-deloitte-intern
 
 就用一张德勤团建的集体照作为结束吧。
 
-![](https://ws4.sinaimg.cn/large/006tNbRwgy1fxsixt0qd8j31900u0b2b.jpg)
+![](https://raw.githubusercontent.com/yiukuenchu/image-farm/master/img/006tNbRwgy1fxsixt0qd8j31900u0b2b.jpg)
 
 感恩德勤，感恩德勤人。
 

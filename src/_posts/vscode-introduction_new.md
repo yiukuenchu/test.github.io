@@ -14,7 +14,7 @@ vssue-title: vscode-introduction
 > You cannot improve your past, but you can improve your future.
 
 ------------------------
-![](https://ws1.sinaimg.cn/large/006tNbRwgy1fx13ycbthkj31kw11fdib.jpg)
+![](https://raw.githubusercontent.com/yiukuenchu/image-farm/master/img/006tNbRwgy1fx13ycbthkj31kw11fdib.jpg)
 
 *▲ VSCode - Code editing. Redifined.*  
 <br> 
@@ -23,14 +23,14 @@ vssue-title: vscode-introduction
   
 **“哇，这玩意好酷！”**
   
-![](https://ws3.sinaimg.cn/large/006tNbRwgy1fx1nzh6t41j30sf0kiq4n.jpg)
+![](https://raw.githubusercontent.com/yiukuenchu/image-farm/master/img/006tNbRwgy1fx1nzh6t41j30sf0kiq4n.jpg)
   
 *▲ VC++6.0 - 经典的面板*  
 <br>
 # ② 2016年
 一次偶然的机会，我接触到了[Sublime Text](http://www.sublimetext.com/)。真的很难描述那种第一次见到如此漂亮的界面的感受，我永远不会忘记那种被惊艳到的感觉。
 
-![](https://ws4.sinaimg.cn/large/006tNbRwly1fx1oa51pb9j31kw11ftcr.jpg)
+![](https://raw.githubusercontent.com/yiukuenchu/image-farm/master/img/006tNbRwly1fx1oa51pb9j31kw11ftcr.jpg)
   
 *▲ Sublime Text - 陪伴了我3年*  
   
