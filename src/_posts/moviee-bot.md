@@ -9,7 +9,7 @@ vssue-title: make-24/7-telegram-bot
 
 
 
-![bot_banner](/Users/zhuyaokun/Desktop/少数派/5 动手制作一个 24:7 工作的 Telegram Bot/image/bot_banner.png)
+![](https://raw.githubusercontent.com/yiukuenchu/image-farm/master/img/bot_banner.png)
 
 上个周末，我从零开始做了一个用于检索电影、演员以及获取电影资讯的 Telegram Bot。于是有了这篇文章，用来分享和记录我第一次制做 Telegram Bot 的过程。
 
@@ -25,7 +25,7 @@ vssue-title: make-24/7-telegram-bot
 
 - 了解我制作这个 Telegram Bot 的大体流程
 
-  ![show](/Users/zhuyaokun/Desktop/少数派/5 动手制作一个 24:7 工作的 Telegram Bot/image/show.jpg)
+![](https://raw.githubusercontent.com/yiukuenchu/image-farm/master/img/show.jpg)
 
 # 前期准备
 
@@ -39,7 +39,7 @@ vssue-title: make-24/7-telegram-bot
 
 选择要引入的模块，当然随着开发过程一般会不断增加需要用到的模块。但一开始肯定要引入一个 Telegram Bot API。官方为制作 Telegram Bot 提供了多种多种语言的选择，每种语言又提供了多种 API。我选择了 Node.js，这里推荐一个使用起来较为简单的 [Node.js Telegram Bot API](<https://github.com/yagop/node-telegram-bot-api>)。我们在终端进入项目文件夹后，用 ```npm install node-telegram-bot-api ``` 就能引入这个模块啦。然后在代码中用这个模块创建一个 Bot 实体，比如：
 
-```
+```js
 const TelegramBot = require('node-telegram-bot-api');
 const bot = new TelegramBot(token, {polling: true});
 ```
@@ -50,7 +50,7 @@ const bot = new TelegramBot(token, {polling: true});
 
 我们怎么样绑定我们创建的 Bot 呢？对的，就是在代码中引入上面的 Bot Token。比如说你的 Token 是 123456:abcdefghijk。那么在代码中：
 
-```
+```js
 const token = '123456:abcdefghijk';
 ```
 
@@ -58,7 +58,7 @@ const token = '123456:abcdefghijk';
 
 接下来就可以开发 Bot 的功能啦。如果你用的是上述第 1 步推荐的 API，那么极力推荐参考 [这个文档](<https://github.com/hosein2398/node-telegram-bot-api-tutorial>)，跟着里面的步骤实现一个简单的功能。比如：
 
-```Node
+```js
 bot.onText(/\/start/, (msg) => {
 
 bot.sendMessage(msg.chat.id, "Welcome");
@@ -76,14 +76,16 @@ bot.sendMessage(msg.chat.id, "Welcome");
 
 此时，在调试的过程中我发现 Bot 是无法对用户的指令作出回应的，因为它还没有连接到 Bot Server。因此这个项目中我在开发过程中便将项目部署在服务器上，这里我选择了部署在 [Heroku](<https://www.heroku.com/>)。
 
-但紧接着，我发现了一个问题，服务开启一段时间后， Bot 便不再对指令作出回应。我在后台查看服务的 Logs 并根据 Heroku 官方文档找到了原因： Heroku 的免费账号限制服务如果一段时间内没有动作，便会自动进入休眠状态。
+但紧接着，我发现了一个问题，服务开启一段时间后， Bot 便不再对指令作出回应。  
 
-![螢幕快照 2019-05-15 下午11.50.41](/Users/zhuyaokun/Desktop/少数派/5 动手制作一个 24:7 工作的 Telegram Bot/image/螢幕快照 2019-05-15 下午11.50.41.png)
 
-为了避免这种情况，我用 [express](<https://www.npmjs.com/package/express>) 的服务让服务器持续监听一个端口，使得这个服务器无法进入休眠状态。因此我们用 ```npm install express``` 安装 expresss 模块，接着在代码中：
+我在后台查看服务的 Logs 并根据 Heroku 官方文档找到了原因： Heroku 的免费账号限制服务如果一段时间内没有动作，便会自动进入休眠状态。  
 
-```
-//引入 express
+
+为了避免这种情况，我用 [express](<https://www.npmjs.com/package/express>) 的服务让服务器持续监听一个端口，使得这个服务器无法进入休眠状态。因此我们用 ```npm install express``` 安装 express 模块，接着在代码中：
+
+```js
+// 引入 express
 const express = require('express');
 const app = express();
 // 监听端口
@@ -101,4 +103,4 @@ app.listen(port);
 
 # 感想
 
-本文列出了制作一个 24/7 Telegram Bot 的大体过程。虽然 Telegram 在国内的用户只是很小一部分，但它本身的可发掘性是摆在那里的。对于编程感兴趣的小伙伴不妨以 Telegram Bot 作为起点开始学习。而对于普通用户来说，如果能在这个过程中养成「遇到问题，查找文档，解决问题」的思维方式，也是收获了一种解决问题的经验。
+本文列出了制作一个 24/7 Telegram Bot 的大体过程。虽然 Telegram 在国内的用户只是很小一部分，但它本身的可发掘性是摆在那里的。对于编程感兴趣的小伙伴不妨以 Telegram Bot 作为起点开始学习。而对于普通用户来说，如果能在这个过程中养成「遇到问题，查找文档，解决问题」的思维方式，也是收获了一种解决问题的经验嘛。🍺
