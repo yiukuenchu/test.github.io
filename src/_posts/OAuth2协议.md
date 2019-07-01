@@ -3,7 +3,7 @@ category:
 tags:
 date: 2019-06-28
 title: Web 开发学习笔记（一）| OAuth2 协议
-vssue-title: oauth2
+vssue: false
 ---
 
 # 前言
