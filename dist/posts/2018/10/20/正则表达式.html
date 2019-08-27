@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>关于正则表达式的一些理解 | Yiu Kuen Chu</title>
+    <meta name="description" content="(ฅ´ω&#96;ฅ) 摸鱼啦喂">
+    <link rel="icon" href="/favicon.png">
+    
+    <link rel="preload" href="/assets/css/0.styles.0a48aea5.css" as="style"><link rel="preload" href="/assets/js/app.950908d9.js" as="script"><link rel="preload" href="/assets/js/3.f13ae8b6.js" as="script"><link rel="preload" href="/assets/js/25.a77696c6.js" as="script"><link rel="prefetch" href="/assets/js/1.2ecbd8c8.js"><link rel="prefetch" href="/assets/js/10.fb1fa9e5.js"><link rel="prefetch" href="/assets/js/11.ea6f7a5d.js"><link rel="prefetch" href="/assets/js/12.82780800.js"><link rel="prefetch" href="/assets/js/13.6595e745.js"><link rel="prefetch" href="/assets/js/14.e6b4069b.js"><link rel="prefetch" href="/assets/js/15.9008fb48.js"><link rel="prefetch" href="/assets/js/16.83e1c0f5.js"><link rel="prefetch" href="/assets/js/17.bfa43846.js"><link rel="prefetch" href="/assets/js/18.a25336dd.js"><link rel="prefetch" href="/assets/js/19.8abdad71.js"><link rel="prefetch" href="/assets/js/20.f102b4b1.js"><link rel="prefetch" href="/assets/js/21.12e34a11.js"><link rel="prefetch" href="/assets/js/22.7d250bb1.js"><link rel="prefetch" href="/assets/js/23.e2863bda.js"><link rel="prefetch" href="/assets/js/24.2876d17b.js"><link rel="prefetch" href="/assets/js/26.10c56320.js"><link rel="prefetch" href="/assets/js/27.d78dabb8.js"><link rel="prefetch" href="/assets/js/28.2cd79ea7.js"><link rel="prefetch" href="/assets/js/4.6b2d0426.js"><link rel="prefetch" href="/assets/js/5.4c46630f.js"><link rel="prefetch" href="/assets/js/6.141fec37.js"><link rel="prefetch" href="/assets/js/7.fa8b169c.js"><link rel="prefetch" href="/assets/js/8.a3ceea9d.js"><link rel="prefetch" href="/assets/js/9.d662e2ec.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0a48aea5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-meteorlxy"><header class="header" data-v-0539f1bd><div data-v-39c72c19 data-v-0539f1bd><nav class="navbar" data-v-39c72c19><div class="container" data-v-39c72c19><a href="/" class="router-link-active" data-v-39c72c19><span class="navbar-site-name" data-v-39c72c19>
+          Yiu Kuen Chu
+        </span></a> <div class="navbar-toggler" data-v-39c72c19><svg class="icon" style="font-size:1.2em;" data-v-39c72c19 data-v-39c72c19><title data-v-39c72c19 data-v-39c72c19>menu</title><use xlink:href="#icon-menu" data-v-39c72c19 data-v-39c72c19></use></svg></div> <div class="navbar-links" data-v-39c72c19><a href="/" class="navbar-link" data-v-39c72c19>
+            Home
+          </a><a href="/posts/" class="navbar-link router-link-active" data-v-39c72c19>
+            Posts
+          </a><a href="/about/" class="navbar-link" data-v-39c72c19>
+            About
+          </a><a href="https://github.com/yiukuenchu" target="_blank" rel="noopener noreferrer" class="navbar-link" data-v-39c72c19>
+            GitHub
+          </a></div></div></nav> <div class="navbar-holder" style="display:none;" data-v-39c72c19></div></div> <div class="banner" data-v-98d6aa8c data-v-0539f1bd data-v-0539f1bd><div class="container" data-v-98d6aa8c><div class="center" data-v-98d6aa8c><h1 data-v-98d6aa8c data-v-0539f1bd>
+          关于正则表达式的一些理解
+        </h1></div></div></div></header> <div class="container clearfix show-aside" data-v-6cd81e6a data-v-6cd81e6a><main class="main" data-v-6cd81e6a><div class="post" data-v-6cd81e6a data-v-6cd81e6a><section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      Created : 2018-10-20
+    </span> <span class="update-date" data-v-4e23451f>
+      Updated : 2019-04-16
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/posts/2018/10/16/streaming-reader.html" class="post-link" data-v-4e23451f>
+      Previous Post : StreamingReader流式读取大数据量文件
+    </a> <a href="/posts/2018/10/26/an-interview.html" class="post-link" data-v-4e23451f>
+      Next Post : 记录一次面试 :-)
+    </a></section></section> <article class="main-div"><div class="content default"><blockquote><p>正则表达式是对字符串（包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为“元字符”））操作的一种逻辑公式，就是用事先定义好的一些特定字符、及这些特定字符的组合，组成一个“规则字符串”，这个“规则字符串”用来表达对字符串的一种过滤逻辑。正则表达式是一种文本模式，模式描述在搜索文本时要匹配的一个或多个字符串。</p></blockquote> <h1 id="📖前言"><a href="#📖前言" aria-hidden="true" class="header-anchor">#</a> 📖前言</h1> <p>大学期间没有好好学习正则表达式，而后一直对正则表达式糊里糊涂的。前不久在实习中遇到了这个“老对手”，特学习了一下正则表达式，趁这个周末写下这篇文章，也算是对自己知识体系的巩固吧。💪</p> <p>正则表达式看上去很复杂（这也是我当时没有好好学习它的原因😅。。。），让很多初学者放弃去深入理解。但其实只要你去学习了，就会发现，其实它<strong>就是很复杂</strong>！（可读性那么差！又不好理解！😠）</p> <p>说是这么说啦，但工作中还是会经常遇到。不学的话，老板一问到，喵喵喵？？🙇</p> <h1 id="🎈正文"><a href="#🎈正文" aria-hidden="true" class="header-anchor">#</a> 🎈正文</h1> <h2 id="一-元字符"><a href="#一-元字符" aria-hidden="true" class="header-anchor">#</a> 一.元字符</h2> <pre><code>1. &quot;^&quot;:^会匹配行或者字符串的起始位置，有时还会匹配整个文档的起始位置。
+2. &quot;$&quot;:$会匹配行或字符串的结尾。
+3. &quot;\b&quot;:不会消耗任何字符只匹配一个位置，常用于匹配单词边界 如 我想从字符串中&quot;This is me&quot;匹配单独的单词 &quot;is&quot; 正则就要写成 &quot;\bis\b&quot;。
+4. &quot;\d&quot;:匹配数字。例如要匹配一个固定格式的电话号码以0开头前4位后7位，如0737-5686123 正则:^0\d\d\d-\d\d\d\d\d\d\d$
+5. &quot;\w&quot;:匹配字母，数字，下划线。
+6. &quot;\s&quot;:匹配空格。
+7. &quot;.&quot;:匹配除了换行符以外的任何字符。
+8. &quot;[]&quot;:字符组 匹配包含括号内元素的字符。
+</code></pre> <p><strong>它们的反义只要改成大写就行啦：</strong></p> <pre><code>1. &quot;\W&quot; 匹配任意不是字母，数字，下划线 的字符
+2. &quot;\S&quot; 匹配任意不是空白符的字符
+3. &quot;\D&quot; 匹配任意非数字的字符
+4. &quot;\B&quot; 匹配不是单词开头或结束的位置
+5. &quot;[abc]&quot; 匹配除了abc以外的任意字符
+</code></pre> <h2 id="二-限定符（量词）"><a href="#二-限定符（量词）" aria-hidden="true" class="header-anchor">#</a> 二.限定符（量词）</h2> <pre><code>1. &quot;*&quot;重复零次或更多
+2. &quot;+&quot;重复一次或更多次
+3. &quot;?&quot;(占有) 重复零次或一次
+4. &quot;{n}&quot; 重复n次
+5. &quot;{n,m}&quot; 重复n到m次
+6. &quot;{n,}&quot; 重复n次或更多次
+</code></pre> <h2 id="三-懒惰限定符"><a href="#三-懒惰限定符" aria-hidden="true" class="header-anchor">#</a> 三.懒惰限定符</h2> <pre><code>1. &quot;*?&quot; 重复任意次，但尽可能少重复
+2. &quot;+?&quot; 重复1次或更多次，但尽可能少重复
+3. &quot;??&quot; 重复0次或1次，但尽可能少重复
+4. &quot;{n,m}?&quot; 重复n到m次，但尽可能少重复
+5. &quot;{n,}?&quot; 重复n次以上，但尽可能少重复
+</code></pre> <p>示例：</p> <pre><code>1. runoo+b，可以匹配 runoob、runooob、runoooooob 等，+ 号代表前面的字符必须至少出现一次（1次或多次）。
+2. runoo*b，可以匹配 runob、runoob、runoooooob 等，* 号代表字符可以不出现，也可以出现一次或者多次（0次、或1次、或多次）。
+3. colou?r  可以匹配 color 或者 colour，? 问号代表前面的字符最多只可以出现一次（0次、或1次）。
+</code></pre> <h2 id="四-反向引用"><a href="#四-反向引用" aria-hidden="true" class="header-anchor">#</a> 四.反向引用</h2> <p>对一个正则表达式模式或部分模式两边添加圆括号将导致相关匹配存储到一个临时缓冲区中，所捕获的每个子匹配都按照在正则表达式模式中从左到右出现的顺序存储。缓冲区编号从 1 开始，最多可存储 99 个捕获的子表达式。每个缓冲区都可以使用 \n 访问，其中 n 为一个标识特定缓冲区的一位或两位十进制数。</p> <blockquote><p>Is is the cost of of gasoline going up up?</p></blockquote> <p>上面的句子很显然有多个重复的单词。如果能设计一种方法定位该句子，而不必查找每个单词的重复出现，那该有多好。下面的正则表达式使用单个子表达式来实现这一点：</p> <div class="language- extra-class"><pre class="language-text"><code>var str = &quot;Is is the cost of of gasoline going up up&quot;;
+var patt1 = /\b([a-z]+) \1\b/ig;
+document.write(str.match(patt1));
+</code></pre></div><h2 id="五-运算符优先级"><a href="#五-运算符优先级" aria-hidden="true" class="header-anchor">#</a> 五.运算符优先级</h2> <p>正则表达式从左到右进行计算，并遵循优先级顺序，这与算术表达式非常类似。<br>
+下表从最高到最低说明了各种正则表达式运算符的优先级顺序：</p> <table><thead><tr><th style="text-align:left;">运算符</th> <th>描述</th></tr></thead> <tbody><tr><td style="text-align:left;">\</td> <td>转义符</td></tr> <tr><td style="text-align:left;">(), (?😃, (?=), []</td> <td>圆括号和方括号</td></tr> <tr><td style="text-align:left;">^, $, \任何元字符、任何字符</td> <td>定位点和序列（即：位置和顺序）</td></tr> <tr><td style="text-align:left;">|</td> <td>替换，&quot;或&quot;操作。字符具有高于替换运算符的优先级</td></tr></tbody></table> <h1 id="参考与致谢"><a href="#参考与致谢" aria-hidden="true" class="header-anchor">#</a> 参考与致谢</h1> <p>1.<a href="http://www.runoob.com/regexp/regexp-tutorial.html" target="_blank" rel="noopener noreferrer">菜鸟教程<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>2.<a href="https://c.runoob.com/front-end/854" target="_blank" rel="noopener noreferrer">正则表达式在线测试工具<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>✨<strong>感谢阅读。</strong></p></div></article> <section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      Created : 2018-10-20
+    </span> <span class="update-date" data-v-4e23451f>
+      Updated : 2019-04-16
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/posts/2018/10/16/streaming-reader.html" class="post-link" data-v-4e23451f>
+      Previous Post : StreamingReader流式读取大数据量文件
+    </a> <a href="/posts/2018/10/26/an-interview.html" class="post-link" data-v-4e23451f>
+      Next Post : 记录一次面试 :-)
+    </a></section></section> <div id="post-comments" class="main-div"><!----></div></div></main> <aside class="aside" data-v-6cd81e6a><div class="info-card main-div" data-v-3da8ff8d data-v-6cd81e6a><div class="info-card-header" data-v-3da8ff8d><img src="/avatar.jpg" alt="yiukuenchu" class="info-avatar" data-v-3da8ff8d></div> <div class="info-card-body" data-v-3da8ff8d><section class="info-nickname" data-v-3da8ff8d>
+      yiukuenchu
+    </section> <section class="info-desc" data-v-3da8ff8d>真诚才是最大本领</section> <section class="info-contact" data-v-3da8ff8d><section data-v-3da8ff8d><span title="Shenzhen, China" data-v-3da8ff8d data-v-3da8ff8d><svg class="icon" style="font-size:1em;" data-v-3da8ff8d data-v-3da8ff8d><title data-v-3da8ff8d data-v-3da8ff8d>Shenzhen, China</title><use xlink:href="#icon-location" data-v-3da8ff8d data-v-3da8ff8d></use></svg><span class="info-text" data-v-3da8ff8d data-v-3da8ff8d>
+          Shenzhen, China
+        </span></span></section> <section data-v-3da8ff8d><span title="Sichuan University" data-v-3da8ff8d data-v-3da8ff8d><svg class="icon" style="font-size:1em;" data-v-3da8ff8d data-v-3da8ff8d><title data-v-3da8ff8d data-v-3da8ff8d>Sichuan University</title><use xlink:href="#icon-organization" data-v-3da8ff8d data-v-3da8ff8d></use></svg><span class="info-text" data-v-3da8ff8d data-v-3da8ff8d>
+          Sichuan University
+        </span></span></section> <section data-v-3da8ff8d><a href="mailto:yiukuenchu@gmail.com" title="yiukuenchu@gmail.com" data-v-3da8ff8d data-v-3da8ff8d><svg class="icon" style="font-size:1em;" data-v-3da8ff8d data-v-3da8ff8d><title data-v-3da8ff8d data-v-3da8ff8d>yiukuenchu@gmail.com</title><use xlink:href="#icon-email" data-v-3da8ff8d data-v-3da8ff8d></use></svg><span class="info-text" data-v-3da8ff8d data-v-3da8ff8d>
+          yiukuenchu@gmail.com
+        </span></a></section></section></div> <div class="info-card-footer" data-v-3da8ff8d><section class="info-sns clearfix" data-v-3da8ff8d><a href="https://github.com/yiukuenchu" target="_blank" class="sns-link" data-v-3da8ff8d><span title="GitHub: @yiukuenchu" class="sns-icon" data-v-3da8ff8d data-v-3da8ff8d><svg class="icon" style="font-size:1.5em;" data-v-3da8ff8d data-v-3da8ff8d><title data-v-3da8ff8d data-v-3da8ff8d>GitHub: @yiukuenchu</title><use xlink:href="#icon-github" data-v-3da8ff8d data-v-3da8ff8d></use></svg></span></a><a href="https://twitter.com/yiukuenchu" target="_blank" class="sns-link" data-v-3da8ff8d><span title="Twitter: @yiukuenchu" class="sns-icon" data-v-3da8ff8d data-v-3da8ff8d><svg class="icon" style="font-size:1.5em;" data-v-3da8ff8d data-v-3da8ff8d><title data-v-3da8ff8d data-v-3da8ff8d>Twitter: @yiukuenchu</title><use xlink:href="#icon-twitter" data-v-3da8ff8d data-v-3da8ff8d></use></svg></span></a><a href="https://www.instagram.com/yiukuenchu/" target="_blank" class="sns-link" data-v-3da8ff8d><span title="Instagram: @yiukuenchu" class="sns-icon" data-v-3da8ff8d data-v-3da8ff8d><svg class="icon" style="font-size:1.5em;" data-v-3da8ff8d data-v-3da8ff8d><title data-v-3da8ff8d data-v-3da8ff8d>Instagram: @yiukuenchu</title><use xlink:href="#icon-instagram" data-v-3da8ff8d data-v-3da8ff8d></use></svg></span></a></section></div></div> <div class="post-nav-card main-div" style="position:relative;top:0;width:0px;" data-v-6cd81e6a><div class="post-nav-contents"><svg class="icon"><title>book</title><use xlink:href="#icon-book"></use></svg> <span>Table of Contents</span> <div class="post-nav-toc"> <ul><li><a href="/posts/2018/10/20/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.html#一-元字符">一.元字符</a> <!----></li><li><a href="/posts/2018/10/20/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.html#二-限定符（量词）">二.限定符（量词）</a> <!----></li><li><a href="/posts/2018/10/20/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.html#三-懒惰限定符">三.懒惰限定符</a> <!----></li><li><a href="/posts/2018/10/20/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.html#四-反向引用">四.反向引用</a> <!----></li><li><a href="/posts/2018/10/20/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.html#五-运算符优先级">五.运算符优先级</a> <!----></li></ul> </div></div> <div class="post-nav-comments"><svg class="icon"><title>comment</title><use xlink:href="#icon-comment"></use></svg> <a href="/posts/2018/10/20/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.html#post-comments">
+      Comments
+    </a></div></div></aside></div> <footer class="footer" data-v-1114308c><p class="sns-links" data-v-1114308c><a href="https://github.com/yiukuenchu" target="_blank" class="sns-link" data-v-1114308c><span title="GitHub: @yiukuenchu" class="sns-icon" data-v-1114308c data-v-1114308c><svg class="icon" style="font-size:25px;" data-v-1114308c data-v-1114308c><title data-v-1114308c data-v-1114308c>GitHub: @yiukuenchu</title><use xlink:href="#icon-github" data-v-1114308c data-v-1114308c></use></svg></span></a><a href="https://twitter.com/yiukuenchu" target="_blank" class="sns-link" data-v-1114308c><span title="Twitter: @yiukuenchu" class="sns-icon" data-v-1114308c data-v-1114308c><svg class="icon" style="font-size:25px;" data-v-1114308c data-v-1114308c><title data-v-1114308c data-v-1114308c>Twitter: @yiukuenchu</title><use xlink:href="#icon-twitter" data-v-1114308c data-v-1114308c></use></svg></span></a><a href="https://www.instagram.com/yiukuenchu/" target="_blank" class="sns-link" data-v-1114308c><span title="Instagram: @yiukuenchu" class="sns-icon" data-v-1114308c data-v-1114308c><svg class="icon" style="font-size:25px;" data-v-1114308c data-v-1114308c><title data-v-1114308c data-v-1114308c>Instagram: @yiukuenchu</title><use xlink:href="#icon-instagram" data-v-1114308c data-v-1114308c></use></svg></span></a></p> <p data-v-1114308c><span data-v-1114308c>Powered by </span> <a href="https://vuepress.vuejs.org" target="_blank" data-v-1114308c>
+      Vuepress
+    </a></p></footer></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.950908d9.js" defer></script><script src="/assets/js/3.f13ae8b6.js" defer></script><script src="/assets/js/25.a77696c6.js" defer></script>
+  </body>
+</html>
